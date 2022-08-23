@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+ registry:
+  image: "registry"
+  volumes:
+   - "./registry-repo:/var/lib/registry:rw"
+   - "/etc/localtime:/etc/localtime:ro"
+   - "/etc/timezone:/etc/timezone:ro"
+  ports:
+   - "5000:5000"
+  restart: "always"
